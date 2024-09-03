@@ -7,9 +7,31 @@
     Shell.FlyoutBehavior="Disabled"
     Title="PAM_Astronomy">
 
-    <ShellContent
-        Title="MoonPhase"
-        ContentTemplate="{DataTemplate local:MoonPhaseView}"
-        Route="MoonPhaseView" />
+    
 
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100"
+              BackgroundColor="DarkGoldenrod">
+            <Image Source="moon.png"></Image>
+            
+        </Grid>
+        <ShellContent Title="Moon Phase" Icon="moon.png"
+ContentTemplate="{DataTemplate local:MoonPhaseView}"/>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Astronomy" Icon="moon.png">
+        <ShellContent Title="Moon Phase" Icon="moon.png"
+        ContentTemplate="{DataTemplate local:MoonPhaseView}"/>
+
+        <ShellContent Title="Sunrise" Icon="sun.png"
+         ContentTemplate="{DataTemplate local:SunriseView}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="About" Icon="question.png">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:AboutPageView}"
+            />
+    </FlyoutItem>
+    
+    
 </Shell>
